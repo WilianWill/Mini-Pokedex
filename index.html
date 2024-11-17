@@ -18,37 +18,44 @@
     <link rel="stylesheet" href="./src/styles/style.css" />
   </head>
   <body>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container-fluid">
-        <form class="d-flex" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-            id="searchInput"
-          />
-          <button class="btn btn-outline-success" id="search">Search</button>
-        </form>
-      </div>
-    </nav>
-    <!-- cards -->
-    <div class="cards-container">
-      <div class="card" style="width: 18rem">
+    <div class="container">
+      <h1 class="title-page">Search Pokemon</h1>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              id="searchInput"
+            />
+            <button class="btn btn-outline-success" id="search">Search</button>
+          </form>
+        </div>
+      </nav>
+      <!-- cards -->
+      <div class="cards-container">
+        <div class="pokemon-id">
+          <h5 id="pokemonId"></h5>
+        </div>
+        <div class="sprites">
+          <img src="" alt="pokemon-sprite" class="sprite" />
+        </div>
+
         <div class="card-body">
-          <h5 class="card-title" id="pokemonName">Pokemon</h5>
-          <img alt="pokemon-sprite" class="sprite" />
-          <div class="pokemon-details">
-            <p class="card-text">Height: <span id="pokemonHeight"></span></p>
-            <p class="card-text">Weight: <span id="pokemonWeight"></span></p>
-            <p class="card-text">Type: <span id="pokemonType"></span></p>
+          <h5 class="card-pokemon-name" id="pokemonName"></h5>
+
+          <div class="details">
+            <span class="card-text" id="pokemonType"></span>
+            <span class="card-text" id="pokemonHeight"></span>
+            <span class="card-text" id="pokemonWeight"></span>
           </div>
-          <p class="card-text" id="pokemonDescription"></p>
         </div>
       </div>
-    </div>
-    <!-- end cards -->
 
+      <!-- end cards -->
+    </div>
     <!-- end container -->
     <script src="./src/script/index.js"></script>
   </body>

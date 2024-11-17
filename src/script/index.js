@@ -9,8 +9,8 @@ function getPokemonData() {
   const pokemonHeight = document.getElementById("pokemonHeight");
   const pokemonType = document.getElementById("pokemonType");
 
-  const prev = document.getElementById("prev");
-  const next = document.getElementById("next");
+  const pokemonId = document.getElementById("pokemonId");
+  const sprites = document.querySelector(".sprites");
 
   search.addEventListener("click", (e) => {
     e.preventDefault();
@@ -27,21 +27,26 @@ function getPokemonData() {
       })
 
       .then((data) => {
+        const cardsContainer = document.querySelector(".cards-container");
+        const getSprite = document.querySelector(".sprites");
         pokemonName.innerHTML = data.name;
-        pokemonHeight.innerHTML = data.height;
-        pokemonWeight.innerHTML = data.weight;
+        pokemonId.innerHTML = `#${data.id}`;
+        pokemonHeight.innerHTML = `Height: ${data.height}`;
+        pokemonWeight.innerHTML = `Weight: ${data.weight}`;
         pokemonType.innerHTML = data.types[0].type.name;
+        data.types[0].type.name;
         sprite.setAttribute("src", data.sprites.front_default);
         searchInput.value = "";
-        const pokeContainer = document.querySelector(".cards-container");
-        pokeContainer.style.display = "flex";
+
+        cardsContainer.style.display = "flex";
+
         console.log(data);
       })
       .catch((error) => {
         console.log("Erro de conexão", error);
       });
   });
-  const currentId = searchInput.value;
+
   prev;
 }
 
